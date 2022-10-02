@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:swipeCardView="clr-namespace:MLToolkit.Forms.SwipeCardView;assembly=MLToolkit.Forms.SwipeCardView"
+             x:Class="MyXamarinApp.Views.QuestionPage"
+             Title="Question Page">
+
+    <ContentPage.Content>
+
+        <StackLayout Padding="10">
+
+            <Label Text="Swipe Left to Answer No!"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+            <Label Text="Swipe Right to Answer Yes!"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+            <swipeCardView:SwipeCardView
+                ItemsSource="{Binding Questions}"
+                SwipedCommand="{Binding SwipedCommand}"
+                LoopCards="{Binding IsLoopCards}"
+                VerticalOptions="FillAndExpand">
+
+                <Button x:Name="LogInButton"
+                        Clicked="LogInButton_Clicked"/>
+
+                <swipeCardView:SwipeCardView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <Label Text="{Binding .}"
+                               FontSize="Medium"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               BackgroundColor="AliceBlue" />
+
+                    </DataTemplate>
+
+
+                </swipeCardView:SwipeCardView.ItemTemplate>
+
+            </swipeCardView:SwipeCardView>
+
+
+            <!--<Label Text="{Binding Message}" HorizontalOptions="CenterAndExpand" />-->
+
+
+
+            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Label Text="Loop Cards" />
+                <Switch IsToggled="{Binding IsLoopCards}"  />
+
+            </StackLayout>-->
+
+            <!--<Button Text="Clear Items" Command="{Binding ClearItemsCommand}"></Button>
+            <Button Text="Add 5 Items" Command="{Binding AddItemsCommand}"></Button>-->
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
