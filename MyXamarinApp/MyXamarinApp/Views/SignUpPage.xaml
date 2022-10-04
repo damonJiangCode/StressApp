@@ -8,7 +8,8 @@
 
         <StackLayout Orientation="Vertical"
                      Padding="30"
-                     Spacing="50">
+                     Spacing="50"
+                     BackgroundColor="Beige">
 
             <BoxView HeightRequest="1"/>
 
@@ -16,27 +17,51 @@
                    WidthRequest="300"
                    Source="icon_about.png"/>
 
-            <Frame BackgroundColor="Green"
+            <Frame BackgroundColor="LightSeaGreen"
                    HasShadow="True">
 
                 <StackLayout Orientation="Vertical"
                              Spacing="10">
+                    
+                    <Entry x:Name="UserName"
+                           Text="{Binding Password}"
+                           Placeholder="Type user name"   
+                           PlaceholderColor="LightSeaGreen"
+                           HeightRequest="40"   
+                           IsPassword="True"  
+                           TextColor="LightSeaGreen"/>
 
                     <Entry x:Name="Email"
                            Text="{Binding Email}"
-                           Placeholder="Type email here"   
-                           PlaceholderColor="Blue"
+                           Placeholder="Type email"   
+                           PlaceholderColor="LightSeaGreen"
                            HeightRequest="40"   
                            Keyboard="Email"  
-                           TextColor="Blue"/>
-                    
-                    <Entry x:Name="Password"
+                           TextColor="LightSeaGreen"/>
+
+                    <Entry x:Name="PhoneNumber"
                            Text="{Binding Password}"
-                           Placeholder="Type password here"   
-                           PlaceholderColor="Blue"
+                           Placeholder="Type phone number"   
+                           PlaceholderColor="LightSeaGreen"
                            HeightRequest="40"   
                            IsPassword="True"  
-                           TextColor="Blue"/>
+                           TextColor="LightSeaGreen"/>
+
+                    <Entry x:Name="Password"
+                           Text="{Binding Password}"
+                           Placeholder="Type password"   
+                           PlaceholderColor="LightSeaGreen"
+                           HeightRequest="40"   
+                           IsPassword="True"  
+                           TextColor="LightSeaGreen"/>
+
+                    <Entry x:Name="CheckPassword"
+                           Text="{Binding Password}"
+                           Placeholder="Type password one more time"   
+                           PlaceholderColor="LightSeaGreen"
+                           HeightRequest="40"   
+                           IsPassword="True"  
+                           TextColor="LightSeaGreen"/>
 
                 </StackLayout>
 
@@ -48,7 +73,7 @@
                     FontAttributes="Bold"
                     FontSize="Large"
                     HorizontalOptions="FillAndExpand"  
-                    BackgroundColor="Green" />
+                    BackgroundColor="LightSeaGreen" />
 
         </StackLayout>
 

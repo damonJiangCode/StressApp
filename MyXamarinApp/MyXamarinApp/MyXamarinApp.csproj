@@ -16,7 +16,7 @@
     <None Remove="Services\" />
     <None Remove="MLToolkit.Forms.SwipeCardView" />
     <None Remove="Firebase.Xamarin" />
-    <None Remove="myxamarinapp-28555-firebase-adminsdk-2d6vj-033ac720c4.json" />
+    <None Remove="myxamarinapp.json" />
     <None Remove="Google.Cloud.Firestore" />
   </ItemGroup>
   <ItemGroup>

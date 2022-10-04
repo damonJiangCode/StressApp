@@ -6,11 +6,13 @@ namespace MyXamarinApp.Views
 {
     public partial class OptionContinuePage : ContentPage
     {
+        
+
         public OptionContinuePage()
         {
             InitializeComponent();
-            BindingContext = new OptionContinueViewModel(Navigation);
 
+            BindingContext = new OptionContinueViewModel(Navigation);
         }
     }
 }
