@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using MyXamarinApp.ViewModels;
 using Xamarin.Forms;
 
 namespace MyXamarinApp.Views
@@ -9,6 +9,7 @@ namespace MyXamarinApp.Views
     {
         public SignUpPage()
         {
+            BindingContext = new SignUpViewModel();
             InitializeComponent();
         }
     }

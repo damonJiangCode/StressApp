@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyXamarinApp.Views.OptionCotinuePage"
+    Title="Option Page">
+
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical"
+                     Padding="200"
+                     Spacing="100"
+                     BackgroundColor="Beige">
+
+            <Button Command="{Binding GoToSignUpCommand}"
+                    Text="Sign Up"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="LightSeaGreen"/>
+
+            <Button Text="Continue as a Guest"
+                    Command="{Binding GoToGuestCommand}"
+                    TextColor="White"  
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="LightSeaGreen" />
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>
+

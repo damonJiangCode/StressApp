@@ -8,12 +8,7 @@ namespace MyXamarinApp.Views
         public QuestionPage()
         {
             InitializeComponent();
-            BindingContext = new QuestionViewModel();
-        }
-
-        void LogInButton_Clicked(System.Object sender, System.EventArgs e)
-        {
-          
+            BindingContext = new QuestionViewModel(Navigation);
         }
     }
 }

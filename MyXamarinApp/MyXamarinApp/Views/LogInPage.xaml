@@ -43,7 +43,7 @@
             </Frame>
 
             <Button Command="{Binding SubmitCommand}"
-                    Text="Login"
+                    Text="Log in"
                     TextColor="White"  
                     FontAttributes="Bold"
                     FontSize="Large"

@@ -7,7 +7,6 @@ namespace MyXamarinApp.ViewModels
     public class LogInViewModel : BaseViewModel
     {
         public Action DisplayInvalidLoginPrompt;
-        // public event PropertyChangedEventHandler PropertyChanged = delegate { };
         private string _email;
         private string _password;
 
@@ -41,9 +40,11 @@ namespace MyXamarinApp.ViewModels
         
         public void OnSubmit()
         {
-            if (Email != "macoratti@yahoo.com" || Password != "secret")
+            if (Email != "zih893@usask.ca" || Password != "13703853310Hzy")
             {
                 DisplayInvalidLoginPrompt();
+
+                Console.WriteLine("GOOOOODOOOOD!");
             }
         }
     }

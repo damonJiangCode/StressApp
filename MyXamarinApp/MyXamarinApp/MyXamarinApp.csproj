@@ -9,16 +9,23 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
     <PackageReference Include="MLToolkit.Forms.SwipeCardView" Version="2.2.0" />
-    <PackageReference Include="Firebase.Xamarin" Version="0.3.6" />
+    <PackageReference Include="Google.Cloud.Firestore" Version="3.0.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Models\" />
     <None Remove="Services\" />
     <None Remove="MLToolkit.Forms.SwipeCardView" />
     <None Remove="Firebase.Xamarin" />
+    <None Remove="myxamarinapp-28555-firebase-adminsdk-2d6vj-033ac720c4.json" />
+    <None Remove="Google.Cloud.Firestore" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MyXamarinApp.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
