@@ -12,9 +12,8 @@ namespace MyXamarinApp.ViewModels
     {
         private readonly INavigation Navigation;
 
-        public OptionContinueViewModel(INavigation navigation)
+        public OptionContinueViewModel()
         {
-            this.Navigation = navigation;
             GoToSignUpCommand = new Command(async () => await OnSignUpCommandAsync());
             GoToGuestCommand = new Command(async () => await OnGuestCommandAsync());
         }
@@ -24,12 +23,14 @@ namespace MyXamarinApp.ViewModels
 
         async Task OnSignUpCommandAsync()
         {
-            await Navigation.PushAsync(new SignUpPage(), true);
+            await Application.Current.MainPage.Navigation.PushAsync(new SignUpPage());
+            //await Navigation.PushAsync(new SignUpPage(), true);
         }
 
         async Task OnGuestCommandAsync()
         {
-            await Navigation.PushAsync(new LogInPage(), true);
+            await Application.Current.MainPage.Navigation.PushAsync(new LogInPage());
+            //await Navigation.PushAsync(new LogInPage(), true);
         }
     }
 }

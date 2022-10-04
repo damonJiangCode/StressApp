@@ -11,8 +11,7 @@ namespace MyXamarinApp.Views
         public OptionContinuePage()
         {
             InitializeComponent();
-
-            BindingContext = new OptionContinueViewModel(Navigation);
+            BindingContext = new OptionContinueViewModel();
         }
     }
 }
