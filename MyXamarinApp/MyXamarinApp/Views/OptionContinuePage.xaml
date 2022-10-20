@@ -2,8 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="MyXamarinApp.Views.OptionContinuePage"
-    Title="Option Page">
+    x:Class="MyXamarinApp.Views.OptionContinuePage">
 
     <ContentPage.Content>
 
@@ -12,16 +11,18 @@
                      Spacing="100"
                      BackgroundColor="Beige">
 
-            <Button Command="{Binding GoToSignUpCommand}"
-                    Text="Sign Up"
+            <Button
+                    Clicked="LogButtonClicked"
+                    Text="Log in"
                     TextColor="White"
                     FontAttributes="Bold"
                     FontSize="Large"
                     HorizontalOptions="FillAndExpand"
                     BackgroundColor="LightSeaGreen"/>
 
-            <Button Text="Continue as a Guest"
-                    Command="{Binding GoToGuestCommand}"
+            <Button
+                    Clicked="SignButtonClicked"
+                    Text="Sign up"
                     TextColor="White"  
                     FontAttributes="Bold"
                     FontSize="Large"

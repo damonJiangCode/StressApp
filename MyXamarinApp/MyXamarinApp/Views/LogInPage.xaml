@@ -2,53 +2,53 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
              x:Class="MyXamarinApp.Views.LogInPage"
-             Title="Log In Page">
+             BackgroundColor="Beige">
     
     <ContentPage.Content>
         
-        <StackLayout Orientation="Vertical"
+        <StackLayout VerticalOptions="Center"
+                     HorizontalOptions="FillAndExpand"
                      Padding="30"
-                     Spacing="50"
-                     BackgroundColor="Beige">
-
-            <BoxView HeightRequest="1"/>
+                     Spacing="20">
 
             <Image HorizontalOptions="Center"
                    WidthRequest="300"
-                   Source="icon_about.png"/>
+                   Source="stress_release_icon.png"/>
 
-            <Frame BackgroundColor="LightSeaGreen"
-                   HasShadow="True">
+            <Entry x:Name="UserName"
+                   Placeholder="user name"
+                   PlaceholderColor="LightSeaGreen"
+                   TextColor="Black"/>
 
-                <StackLayout Orientation="Vertical"
-                             Spacing="10">
+            <Entry x:Name="Password"
+                   IsPassword="True"
+                   Placeholder="password"
+                   PlaceholderColor="LightSeaGreen"
+                   TextColor="Black"/>
 
-                    <Entry x:Name="Email"
-                           Text="{Binding Email}"
-                           Placeholder="Type email"   
-                           PlaceholderColor="LightSeaGreen"
-                           HeightRequest="40"   
-                           Keyboard="Email"  
-                           TextColor="LightSeaGreen"/>
-                    
-                    <Entry x:Name="Password"
-                           Text="{Binding Password}"
-                           Placeholder="Type password"   
-                           PlaceholderColor="LightSeaGreen"
-                           HeightRequest="40"   
-                           IsPassword="True"  
-                           TextColor="LightSeaGreen"/>
-
-                </StackLayout>  
-            </Frame>
-
-            <Button Command="{Binding SubmitCommand}"
+            <Button VerticalOptions="Center"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="LightSeaGreen"
+                    CornerRadius="20"
                     Text="Log in"
                     TextColor="White"  
                     FontAttributes="Bold"
                     FontSize="Large"
-                    HorizontalOptions="FillAndExpand"  
-                    BackgroundColor="LightSeaGreen" />
+                    Clicked="Button_Clicked"/>
+
+            <Label HorizontalOptions="Center">
+
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Don't have an account? " TextColor="Black"/>
+                        <Span Text="Register" TextColor="Black" FontAttributes="Italic"/>
+                    </FormattedString>
+                </Label.FormattedText>
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
 
         </StackLayout>
 

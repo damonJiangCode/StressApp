@@ -8,8 +8,8 @@ namespace MyXamarinApp.Views
 
         public QuestionPage()
         {
-            InitializeComponent();
             BindingContext = new QuestionViewModel(Navigation);
+            InitializeComponent();
         }
     }
 }

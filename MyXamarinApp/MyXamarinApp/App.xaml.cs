@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using MyXamarinApp.Views;
+using Xamarin.Forms;
 
 namespace MyXamarinApp
 {
@@ -8,7 +9,7 @@ namespace MyXamarinApp
         public App ()
         {
             InitializeComponent();
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new LogInPage());
         }
 
         protected override void OnStart ()

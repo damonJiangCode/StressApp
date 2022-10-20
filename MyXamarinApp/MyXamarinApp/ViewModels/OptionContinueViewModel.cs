@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using System.Windows.Input;
 using MyXamarinApp.Views;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace MyXamarinApp.ViewModels
 {
@@ -12,25 +13,23 @@ namespace MyXamarinApp.ViewModels
     {
         private readonly INavigation Navigation;
 
-        public OptionContinueViewModel()
+        public OptionContinueViewModel(INavigation navigation)
         {
-            GoToSignUpCommand = new Command(async () => await OnSignUpCommandAsync());
-            GoToGuestCommand = new Command(async () => await OnGuestCommandAsync());
+            SignUpCommand = new Command(async () => await OnSignUpCommandAsync());
+            GuestCommand = new Command(async () => await OnGuestCommandAsync());
         }
 
-        public Command GoToSignUpCommand { get; }
-        public Command GoToGuestCommand { get; }
+        public Command SignUpCommand { get;}
+        public Command GuestCommand { get;}
 
         async Task OnSignUpCommandAsync()
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new SignUpPage());
-            //await Navigation.PushAsync(new SignUpPage(), true);
+            await Navigation.PushAsync(new SignUpPage(), true);
         }
 
         async Task OnGuestCommandAsync()
         {
-            await Application.Current.MainPage.Navigation.PushAsync(new LogInPage());
-            //await Navigation.PushAsync(new LogInPage(), true);
+            await Navigation.PushAsync(new LogInPage(), true);
         }
     }
 }

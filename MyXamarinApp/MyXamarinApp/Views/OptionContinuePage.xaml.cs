@@ -1,18 +1,26 @@
 ﻿using Xamarin.Forms;
 using MyXamarinApp.ViewModels;
-using System;
 
 namespace MyXamarinApp.Views
 {
     public partial class OptionContinuePage : ContentPage
     {
-        
+        //private readonly NavigationPage MainPage;
 
         public OptionContinuePage()
         {
+            BindingContext = new OptionContinueViewModel(Navigation);
             InitializeComponent();
-            BindingContext = new OptionContinueViewModel();
+        }
+
+        async void LogButtonClicked(System.Object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new LogInPage());
+        }
+
+        async void SignButtonClicked(System.Object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new SignUpPage());
         }
     }
 }
-

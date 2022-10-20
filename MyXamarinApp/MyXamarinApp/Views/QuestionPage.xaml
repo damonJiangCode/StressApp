@@ -41,14 +41,14 @@
 
             <!--<Label Text="{Binding Message}" HorizontalOptions="CenterAndExpand" />-->
 
-            <Button Text="Continue"
+            <!--<Button Text="Continue"
                     IsVisible="false"
                     Command="{Binding ContinueCommand}"
                     TextColor="White"  
                     FontAttributes="Bold"
                     FontSize="Large"
                     HorizontalOptions="FillAndExpand"  
-                    BackgroundColor="LightSeaGreen"/>
+                    BackgroundColor="LightSeaGreen"/>-->
 
         </StackLayout>
 

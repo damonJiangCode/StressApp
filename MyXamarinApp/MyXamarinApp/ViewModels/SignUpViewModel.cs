@@ -9,31 +9,22 @@ using System.Windows.Input;
 
 namespace MyXamarinApp.ViewModels
 {
-    public class SignUpViewModel : ContentPage
+    public class SignUpViewModel : BaseViewModel
     {
-        private string _userName;
-        private string _email;
-        private string _password;
-        private string _firstName;
-        private string _lastName;
-        private int _phoneNumber;
+        //private string _userName;
+        //private string _email;
+        //private string _password;
+        //private string _firstName;
+        //private string _lastName;
+        //private int _phoneNumber;
+        private readonly INavigation Navigation;
+
 
         public SignUpViewModel()
         {
+            //this.Navigation = navigation;
             SignUpCommand = new Command(OnSignUp);
         }
-
-        //private void Button_Clicked(System.Object sender, System.EventArgs e)
-        //{
-        //    string path = AppDomain.CurrentDomain.BaseDirectory + @"myxamarinapp.json";
-        //    Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
-        //    FirestoreDb db = FirestoreDb.Create("myxamarinapp-28555");
-        //    Debug.WriteLine("SUCCESSFUL!");
-        //}
-
-        // public Action DisplayInvalidLoginPrompt;
-        // private string _email;
-        // private string _password;
 
         public ICommand SignUpCommand { protected set; get; }
 
@@ -47,7 +38,16 @@ namespace MyXamarinApp.ViewModels
             string path = AppDomain.CurrentDomain.BaseDirectory + @"MyXamarinApp.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
             FirestoreDb db = FirestoreDb.Create("myxamarinapp-28555");
-            Debug.WriteLine("SUCCESSFUL!");
+
+            // Console.WriteLine("CONNECTION WORKS!!!!!!!!");
+
+            //DocumentReference docRef = db.Collection("accountinfo").Document("yUIEgRkpwToFT9jJcVOw");
+            //Dictionary<string, object> user = new Dictionary<string, object>
+            //{
+            //    { "Email", "b" },
+            //    { "UserName", "b" }
+            //};
+            //await docRef.SetAsync(user);
         }
     }
 }

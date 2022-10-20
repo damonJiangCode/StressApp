@@ -19,6 +19,8 @@ namespace MyXamarinApp.ViewModels
 
         private readonly INavigation Navigation;
 
+        //private NavigationPage MainPage;
+
         public QuestionViewModel(INavigation navigation)
         {
             _questions = new ObservableCollection<string>();
@@ -32,8 +34,8 @@ namespace MyXamarinApp.ViewModels
             _questions.Add("Have a good one!");
 
             this.Navigation = navigation;
-            ContinueCommand = new Command(async () => await OnContinueCommandAsync());
             SwipedCommand = new Command<SwipedCardEventArgs>(OnSwipedCommand);
+            //MainPage = new NavigationPage(new QuestionPage());
         }
 
         // get all questions of type string
@@ -60,12 +62,14 @@ namespace MyXamarinApp.ViewModels
 
         // define commands with binding property in xmal file
         public ICommand SwipedCommand { get; }
+
+
         public Command ContinueCommand { get; }
 
         // function to jump to another page
         async Task OnContinueCommandAsync()
         {
-            await Navigation.PushModalAsync(new OptionContinuePage(), true);
+            await Navigation.PushModalAsync(new MainPage(), true);
         }
 
         // jump to another page when questions are answered
@@ -74,10 +78,12 @@ namespace MyXamarinApp.ViewModels
             count++;
             // var item = eventArgs.Item as string;
             // Message = $"{item} swiped {eventArgs.Direction} and count {count}";
-            
-            if (count == 1)
+            //Console.WriteLine("WHAT HAPPENDED!");
+            if (count == 2)
             {
+                //Console.WriteLine("before continue");
                 await OnContinueCommandAsync();
+                //Console.WriteLine("after continue");
             }
         }
     }

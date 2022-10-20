@@ -125,6 +125,10 @@
     <BundleResource Include="MyXamarinApp.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <BundleResource Include="Resources\stress_release_icon.png" />
+    <BundleResource Include="Resources\stress_release_icon%402x.png" />
+    <BundleResource Include="Resources\stress_release_icon%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
