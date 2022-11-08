@@ -15,28 +15,28 @@
                    WidthRequest="300"
                    Source="stress_release_icon.png"/>
                     
-            <Entry x:Name="UserName"
+            <Entry x:Name="RecordUserName"
                     Placeholder="Please create user name"
                     PlaceholderColor="LightSeaGreen"
                     TextColor="Black"/>
 
-            <Entry x:Name="Email"
+            <Entry x:Name="RecordEmail"
                     Placeholder="Please type your email"
                     PlaceholderColor="LightSeaGreen"
                     TextColor="Black"/>
 
-            <Entry x:Name="PhoneNumber"
+            <Entry x:Name="RecordPhoneNumber"
                     Placeholder="Please type your phone number"
                     PlaceholderColor="LightSeaGreen"
                     TextColor="Black"/>
 
-            <Entry x:Name="Password"
+            <Entry x:Name="RecordPassword"
                     IsPassword="True"
                     Placeholder="Please create your password"
                     PlaceholderColor="LightSeaGreen"
                     TextColor="Black"/>
 
-            <Entry x:Name="CheckPassword"
+            <Entry x:Name="RecordCheckPassword"
                     IsPassword="True"  
                     Placeholder="Please type password one more time"   
                     PlaceholderColor="LightSeaGreen"  
