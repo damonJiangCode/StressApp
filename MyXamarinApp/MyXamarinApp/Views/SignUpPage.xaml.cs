@@ -1,14 +1,12 @@
 ﻿using MyXamarinApp.ViewModels;
-using MyXamarinApp.Model;
+using MyXamarinApp.Models;
 using Xamarin.Forms;
 using Firebase.Database;
-using Google.Cloud.Firestore.V1;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System;
 using Xamarin.Essentials;
 using Firebase.Database.Query;
-using Google.Type;
 
 namespace MyXamarinApp.Views
 {

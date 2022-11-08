@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MyXamarinApp.Model
+namespace MyXamarinApp.Models
 {
     public class User
     {
