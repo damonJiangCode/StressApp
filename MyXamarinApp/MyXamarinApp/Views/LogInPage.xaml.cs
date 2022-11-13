@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using MyXamarinApp.ViewModels;
 using Xamarin.Essentials;
+using Firebase.Database;
 
 namespace MyXamarinApp.Views
 {
     public partial class LogInPage : ContentPage
     {
+        // connect the database
+        FirebaseClient firebaseClient = new FirebaseClient("https://myxamarinapp-331dd-default-rtdb.firebaseio.com/");
+
         public LogInPage()
         {
 
@@ -20,14 +24,22 @@ namespace MyXamarinApp.Views
         // jump to main page
         async void Button_Clicked(System.Object sender, System.EventArgs e)
         {
-            if (UserName.Text == "Damon" && Password.Text == "1234")
+            var userList = await firebaseClient.Child("Users").OnceAsync<Models.User>();
+
+            bool found = false;
+
+            foreach (var user in userList)
             {
-                await Navigation.PushAsync(new MainPage());
+                if (user.Object.UserName.Equals(UserName.Text) && user.Object.Password.Equals(Password.Text))
+                {
+                    found = true;
+                    await Navigation.PushAsync(new MainPage());
+                }
             }
-            else
-            {
-                await DisplayAlert("Alert", "User name or password is incorrect!", "ok");
-            }
+            if (!found)
+            DisplayAlert("Alert", "User name or password is incorrect!", "ok");
+
+           
         }
 
         // jump to register page 
