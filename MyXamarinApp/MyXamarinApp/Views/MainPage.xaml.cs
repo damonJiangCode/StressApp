@@ -15,6 +15,7 @@ namespace MyXamarinApp.Views
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
         }
     }
 }

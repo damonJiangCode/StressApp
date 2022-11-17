@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyXamarinApp.Views.ProfilePage"
+    BackgroundColor="DarkGray">
+
+    <ContentPage.Content>
+
+        <StackLayout Margin="10, 10, 10, 10">
+
+            <Label Text="Gender:"/>
+            <Picker x:Name="genderPicker"
+                    Margin="200,5,5,5"
+                    Title="gender"
+                    TitleColor="Black"
+                    BackgroundColor="Gainsboro">
+                <Picker.Items>
+                    <x:String>Male</x:String>
+                    <x:String>Female</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Job Field:"/>
+            <Picker x:Name="jobFieldPicker"
+                    Margin="200,5,5,5"
+                    Title="job field"
+                    TitleColor="Black"
+                    BackgroundColor="Gainsboro">
+                <Picker.Items>
+                    <x:String>Student</x:String>
+                    <x:String>Engineering and architecture</x:String>
+                    <x:String>Arts and entertainment</x:String>
+                    <x:String>Administration, business, and management</x:String>
+                    <x:String>Communications</x:String>
+                    <x:String>Community and social services</x:String>
+                    <x:String>Education</x:String>
+                    <x:String>Science and technology</x:String>
+                    <x:String>Installation, repair, and maintenance</x:String>
+                    <x:String>Farming, fishing, and forestry</x:String>
+                    <x:String>Government</x:String>
+                    <x:String>Health and medicine</x:String>
+                    <x:String>Law and public policy</x:String>
+                    <x:String>Sales</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Birth Date:"/>
+            <DatePicker x:Name="birthDatePicker"
+                        Margin="200,5,5,5"
+                        BackgroundColor="Gainsboro"
+                        Format="MMM, dd, yyyy"/>
+
+        </StackLayout>
+
+        
+    </ContentPage.Content>
+</ContentPage>
+

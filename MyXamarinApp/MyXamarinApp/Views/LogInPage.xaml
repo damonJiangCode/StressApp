@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
              x:Class="MyXamarinApp.Views.LogInPage"
-             BackgroundColor="Beige">
+             BackgroundColor="DarkGray">
     
     <ContentPage.Content>
         
@@ -10,25 +10,26 @@
                      HorizontalOptions="FillAndExpand"
                      Padding="30"
                      Spacing="20">
-
+            <!--<Button Text="check"
+                    Clicked="Button_Clicked_1"/>-->
             <Image HorizontalOptions="Center"
                    WidthRequest="300"
                    Source="stress_release_icon.png"/>
 
-            <Entry x:Name="UserName"
+            <Entry x:Name="userName"
                    Placeholder="user name"
-                   PlaceholderColor="LightSeaGreen"
+                   PlaceholderColor="Silver"
                    TextColor="Black"/>
 
-            <Entry x:Name="Password"
+            <Entry x:Name="password"
                    IsPassword="True"
                    Placeholder="password"
-                   PlaceholderColor="LightSeaGreen"
+                   PlaceholderColor="Silver"
                    TextColor="Black"/>
 
             <Button VerticalOptions="Center"
                     HorizontalOptions="FillAndExpand"
-                    BackgroundColor="LightSeaGreen"
+                    BackgroundColor="DodgerBlue"
                     CornerRadius="20"
                     Text="Log in"
                     TextColor="White"  

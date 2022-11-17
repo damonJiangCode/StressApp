@@ -39,17 +39,6 @@
 
             </swipeCardView:SwipeCardView>
 
-            <!--<Label Text="{Binding Message}" HorizontalOptions="CenterAndExpand" />-->
-
-            <!--<Button Text="Continue"
-                    IsVisible="false"
-                    Command="{Binding ContinueCommand}"
-                    TextColor="White"  
-                    FontAttributes="Bold"
-                    FontSize="Large"
-                    HorizontalOptions="FillAndExpand"  
-                    BackgroundColor="LightSeaGreen"/>-->
-
         </StackLayout>
 
     </ContentPage.Content>

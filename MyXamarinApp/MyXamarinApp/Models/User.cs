@@ -8,7 +8,9 @@ namespace MyXamarinApp.Models
     {
         public String UserName { get; set; }
         public string Email { get; set; }
-        public String PhoneNumber { get; set; }
+        // public String PhoneNumber { get; set; }
         public String Password { get; set; }
+        // public List<int> Answers { get; set; }
+        // public String Gender { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MyXamarinApp.ViewModels;
 
 using Xamarin.Forms;
 
@@ -9,8 +10,9 @@ namespace MyXamarinApp.Views
 	{	
 		public AccountPage ()
 		{
-			InitializeComponent ();
-		}
-	}
+			InitializeComponent();
+			BindingContext = new AccountViewModel(Navigation);
+        }
+    }
 }
 

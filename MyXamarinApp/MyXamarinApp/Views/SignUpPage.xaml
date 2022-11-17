@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyXamarinApp.Views.SignUpPage"
-             BackgroundColor="Beige">
+             BackgroundColor="DarkGray">
 
     <ContentPage.Content>
 
@@ -15,36 +15,31 @@
                    WidthRequest="300"
                    Source="stress_release_icon.png"/>
                     
-            <Entry x:Name="RecordUserName"
-                    Placeholder="Please create user name"
-                    PlaceholderColor="LightSeaGreen"
+            <Entry x:Name="userName"
+                    Placeholder="Please create a user name"
+                    PlaceholderColor="Silver"
                     TextColor="Black"/>
 
-            <Entry x:Name="RecordEmail"
+            <Entry x:Name="email"
                     Placeholder="Please type your email"
-                    PlaceholderColor="LightSeaGreen"
+                    PlaceholderColor="Silver"
                     TextColor="Black"/>
 
-            <Entry x:Name="RecordPhoneNumber"
-                    Placeholder="Please type your phone number"
-                    PlaceholderColor="LightSeaGreen"
-                    TextColor="Black"/>
-
-            <Entry x:Name="RecordPassword"
+            <Entry x:Name="password"
                     IsPassword="True"
                     Placeholder="Please create your password"
-                    PlaceholderColor="LightSeaGreen"
+                    PlaceholderColor="Silver"
                     TextColor="Black"/>
 
-            <Entry x:Name="RecordCheckPassword"
+            <Entry x:Name="checkPassword"
                     IsPassword="True"  
                     Placeholder="Please type password one more time"   
-                    PlaceholderColor="LightSeaGreen"  
+                    PlaceholderColor="Silver"  
                     TextColor="Black"/>
 
             <Button VerticalOptions="Center"
                     HorizontalOptions="FillAndExpand"
-                    BackgroundColor="LightSeaGreen"
+                    BackgroundColor="DodgerBlue"
                     CornerRadius="20"
                     Text="Sign Up"
                     TextColor="White"  
