@@ -27,6 +27,7 @@ namespace MyXamarinApp.ViewModels
             _questions.Add("QUESTION_7");
             _questions.Add("Have a good one!");
 
+
             this.Navigation = navigation;
             SwipedCommand = new Command<SwipedCardEventArgs>(OnSwipedCommand);
         }
