@@ -16,17 +16,8 @@
     <ContentPage Title="Tab 2"
                  BackgroundColor="DarkGray"/>
 
-    <ContentPage Title="Tab 3"
-                 BackgroundColor="DarkGray"/>
+    <local:SettingsPage Title="Settings"/>
 
-    <local:AccountPage Title="Account">
-        <!--<ContentPage.ToolbarItems>
-            <ToolbarItem Text="{Binding SwitchCommand}"
-                         Order="Primary"
-                         Priority="0" />
-
-        </ContentPage.ToolbarItems>-->
-    </local:AccountPage>
 
 
 

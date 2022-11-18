@@ -5,6 +5,7 @@ using MyXamarinApp.ViewModels;
 using Xamarin.Essentials;
 using Firebase.Database;
 using MyXamarinApp.Models;
+using Newtonsoft.Json;
 
 namespace MyXamarinApp.Views
 {
@@ -38,7 +39,9 @@ namespace MyXamarinApp.Views
                 if (user.Object.UserName.Equals(userName.Text) && user.Object.Password.Equals(password.Text))
                 {
                     // store the credentials to local device
-                    Application.Current.Properties["account"] = user;
+                    var userInfo = JsonConvert.SerializeObject(user);
+                    Application.Current.Properties.Add("account", userInfo);
+                    Application.Current.SavePropertiesAsync();
                     found = true;
                     await Navigation.PushAsync(new MainPage());
                 }

@@ -3,8 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewmodels="clr-namespace:MyXamarinApp.ViewModels"
-    x:DataType="viewmodels:AccountViewModel"
-    x:Class="MyXamarinApp.Views.AccountPage"
+    x:DataType="viewmodels:SettingsViewModel"
+    x:Class="MyXamarinApp.Views.SettingsPage"
     BackgroundColor="DarkGray">
 
     <ContentPage.ToolbarItems>
@@ -35,6 +35,8 @@
             <Button Text="blablablabla"
                     />
         </StackLayout>
+
     </ContentPage.Content>
+
 </ContentPage>
 

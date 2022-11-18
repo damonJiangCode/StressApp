@@ -9,11 +9,20 @@ namespace MyXamarinApp
         public App ()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
+            
+            
         }
 
         protected override void OnStart ()
         {
+            if (Application.Current.Properties.ContainsKey("account"))
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new LogInPage());
+            }
         }
 
         protected override void OnSleep ()
@@ -22,6 +31,14 @@ namespace MyXamarinApp
 
         protected override void OnResume ()
         {
+            //if (Application.Current.Properties.ContainsKey("account"))
+            //{
+            //    MainPage = new NavigationPage(new MainPage());
+            //}
+            //else
+            //{
+            //    MainPage = new NavigationPage(new LogInPage());
+            //}
         }
     }
 }

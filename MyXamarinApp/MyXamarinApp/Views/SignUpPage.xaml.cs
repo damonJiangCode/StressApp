@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using System;
 using Xamarin.Essentials;
 using Firebase.Database.Query;
+using Newtonsoft.Json;
 
 namespace MyXamarinApp.Views
 {
@@ -72,9 +73,11 @@ namespace MyXamarinApp.Views
                 {
                     // create the user info
                     User newUser = new User() { UserName = userName.Text, Email = email.Text, Password = password.Text };
+                    var userInfo = JsonConvert.SerializeObject(newUser);
 
                     // save the credentials in local device staticly
-                    Application.Current.Properties["account"] = newUser;
+                    Application.Current.Properties.Add("account", userInfo);
+                    Application.Current.SavePropertiesAsync();
 
                     // add to DB
                     firebaseClient.Child("Users").PostAsync(newUser);

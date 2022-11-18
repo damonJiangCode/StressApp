@@ -5,13 +5,13 @@ using MyXamarinApp.Views;
 
 namespace MyXamarinApp.ViewModels
 {
-    public class AccountViewModel : BaseViewModel
+    public class SettingsViewModel : BaseViewModel
     {
         String _textDisplay;
         private readonly INavigation Navigation;
         bool _buttonDisplay;
 
-        public AccountViewModel(INavigation navigation)
+        public SettingsViewModel(INavigation navigation)
         {
             this.Navigation = navigation;
 

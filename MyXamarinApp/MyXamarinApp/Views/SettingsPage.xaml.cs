@@ -6,12 +6,12 @@ using Xamarin.Forms;
 
 namespace MyXamarinApp.Views
 {	
-	public partial class AccountPage : ContentPage
+	public partial class SettingsPage : ContentPage
 	{	
-		public AccountPage ()
+		public SettingsPage ()
 		{
 			InitializeComponent();
-			BindingContext = new AccountViewModel(Navigation);
+			BindingContext = new SettingsViewModel(Navigation);
         }
     }
 }
