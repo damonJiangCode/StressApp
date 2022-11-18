@@ -12,14 +12,8 @@ namespace MyXamarinApp.ViewModels
     public class QuestionViewModel : BaseViewModel
     {
         ObservableCollection<string> _questions;
-
-        //string _message;
-
         int count = 0;
-
         private readonly INavigation Navigation;
-
-        //private NavigationPage MainPage;
 
         public QuestionViewModel(INavigation navigation)
         {
@@ -35,10 +29,8 @@ namespace MyXamarinApp.ViewModels
 
             this.Navigation = navigation;
             SwipedCommand = new Command<SwipedCardEventArgs>(OnSwipedCommand);
-            //MainPage = new NavigationPage(new QuestionPage());
         }
 
-        // get all questions of type string
         public ObservableCollection<string> Questions
         {
             get => _questions;
@@ -49,42 +41,18 @@ namespace MyXamarinApp.ViewModels
             }
         }
 
-        // a help texts to show something
-        //public string Message
-        //{
-        //    get => _message;
-        //    set
-        //    {
-        //        _message = value;
-        //        RaisePropertyChanged();
-        //    }
-        //}
-
-        // define commands with binding property in xmal file
         public ICommand SwipedCommand { get; }
-
-
-        public Command ContinueCommand { get; }
-
-        // function to jump to another page
-        async Task OnContinueCommandAsync()
-        {
-            await Navigation.PushModalAsync(new MainPage(), true);
-        }
 
         // jump to another page when questions are answered
         async void OnSwipedCommand(SwipedCardEventArgs eventArgs)
         {
             count++;
-            // var item = eventArgs.Item as string;
-            // Message = $"{item} swiped {eventArgs.Direction} and count {count}";
-            //Console.WriteLine("WHAT HAPPENDED!");
-            if (count == 2)
+            if (count == 7)
             {
-                //Console.WriteLine("before continue");
-                await OnContinueCommandAsync();
-                //Console.WriteLine("after continue");
+                await Navigation.PushAsync(new MainPage());
             }
         }
+
+        
     }
 }

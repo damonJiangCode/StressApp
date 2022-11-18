@@ -2,26 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:swipeCardView="clr-namespace:MLToolkit.Forms.SwipeCardView;assembly=MLToolkit.Forms.SwipeCardView" 
-             x:Class="MyXamarinApp.Views.QuestionPage"
-             Title="Question Page">
+             xmlns:viewmodels="clr-namespace:MyXamarinApp.ViewModels"
+             x:DataType="viewmodels:QuestionViewModel"
+             x:Class="MyXamarinApp.Views.QuestionPage">
 
     <ContentPage.Content>
 
-        <StackLayout Padding="10"
-                     BackgroundColor="Beige">
+        <StackLayout Padding="30"
+                     BackgroundColor="DarkGray">
 
-            <Label Text="Swipe Left to Answer No!"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+            <Label Text="SWIPE LEFT TO SAY NO!"
+                   TextColor="SlateGray"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
 
-            <Label Text="Swipe Right to Answer Yes!"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+            <Label Text="SWIPE RIGHT TO SAY YES!"
+                   TextColor="SlateGray"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
 
             <swipeCardView:SwipeCardView
                 ItemsSource="{Binding Questions}"
                 SwipedCommand="{Binding SwipedCommand}"
-                VerticalOptions="FillAndExpand">
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
 
                 <swipeCardView:SwipeCardView.ItemTemplate>
 
@@ -31,7 +35,7 @@
                                FontSize="Medium"
                                HorizontalTextAlignment="Center"
                                VerticalTextAlignment="Center"
-                               BackgroundColor="AliceBlue" />
+                               BackgroundColor="SlateGray" />
 
                     </DataTemplate>
 

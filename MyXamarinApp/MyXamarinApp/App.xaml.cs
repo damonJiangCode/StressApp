@@ -9,27 +9,11 @@ namespace MyXamarinApp
         public App ()
         {
             InitializeComponent();
-            
+            MainPage = new QuestionPage();
             
         }
 
         protected override void OnStart ()
-        {
-            if (Application.Current.Properties.ContainsKey("account"))
-            {
-                MainPage = new NavigationPage(new MainPage());
-            }
-            else
-            {
-                MainPage = new NavigationPage(new LogInPage());
-            }
-        }
-
-        protected override void OnSleep ()
-        {
-        }
-
-        protected override void OnResume ()
         {
             //if (Application.Current.Properties.ContainsKey("account"))
             //{
@@ -39,6 +23,15 @@ namespace MyXamarinApp
             //{
             //    MainPage = new NavigationPage(new LogInPage());
             //}
+        }
+
+        protected override void OnSleep ()
+        {
+        }
+
+        protected override void OnResume ()
+        {
+            
         }
     }
 }
