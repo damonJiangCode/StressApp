@@ -1,9 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:swipeCardView="clr-namespace:MLToolkit.Forms.SwipeCardView;assembly=MLToolkit.Forms.SwipeCardView" 
+             xmlns:swipeCardView="clr-namespace:MLToolkit.Forms.SwipeCardView;assembly=MLToolkit.Forms.SwipeCardView"
+             x:Class="MyXamarinApp.Views.QuestionPage"
+             NavigationPage.HasNavigationBar="false">
+
+    <ContentPage.Content>
+
+        <StackLayout Padding="40"
+                     BackgroundColor="DarkGray">
+
+            <Label Text="SWIPE LEFT TO SAY NO!"
+                   TextColor="SlateGray"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+
+            <Label Text="SWIPE RIGHT TO SAY YES!"
+                   TextColor="SlateGray"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+
+            <swipeCardView:SwipeCardView
+                ItemsSource="{Binding CardItems}"
+                SwipedCommand="{Binding SwipedCommand}"
+                VerticalOptions="FillAndExpand">
+
+                <swipeCardView:SwipeCardView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding .}"
+                               FontSize="Large"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               BackgroundColor="SlateGray" />
+                    </DataTemplate>
+                </swipeCardView:SwipeCardView.ItemTemplate>
+
+            </swipeCardView:SwipeCardView>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>
+
+<!--<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:swipeCardView="clr-namespace:MLToolkit.Forms.SwipeCardView;assembly=MLToolkit.Forms.SwipeCardView"
              xmlns:viewmodels="clr-namespace:MyXamarinApp.ViewModels"
-             x:DataType="viewmodels:QuestionViewModel"
+             x:DataType="viewmodels:QuestionViewModel" 
              x:Class="MyXamarinApp.Views.QuestionPage">
 
     <ContentPage.Content>
@@ -31,11 +76,11 @@
 
                     <DataTemplate>
 
-                        <Label Text="{Binding .}"
+                        <Label Text="{Binding Questions}"
                                FontSize="Medium"
                                HorizontalTextAlignment="Center"
                                VerticalTextAlignment="Center"
-                               BackgroundColor="SlateGray" />
+                               BackgroundColor="White" />
 
                     </DataTemplate>
 
@@ -47,4 +92,4 @@
 
     </ContentPage.Content>
 
-</ContentPage>
+</ContentPage>-->

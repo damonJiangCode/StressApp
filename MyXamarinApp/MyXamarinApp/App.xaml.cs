@@ -9,8 +9,7 @@ namespace MyXamarinApp
         public App ()
         {
             InitializeComponent();
-            MainPage = new QuestionPage();
-            
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart ()

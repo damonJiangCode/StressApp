@@ -18,24 +18,24 @@
             <Entry x:Name="userName"
                     Placeholder="Please create a user name"
                     PlaceholderColor="Silver"
-                    TextColor="Black"/>
+                    TextColor="Silver"/>
 
             <Entry x:Name="email"
                     Placeholder="Please type your email"
                     PlaceholderColor="Silver"
-                    TextColor="Black"/>
+                    TextColor="Silver"/>
 
             <Entry x:Name="password"
                     IsPassword="True"
                     Placeholder="Please create your password"
                     PlaceholderColor="Silver"
-                    TextColor="Black"/>
+                    TextColor="Silver"/>
 
             <Entry x:Name="checkPassword"
                     IsPassword="True"  
                     Placeholder="Please type password one more time"   
                     PlaceholderColor="Silver"  
-                    TextColor="Black"/>
+                    TextColor="Silver"/>
 
             <Button VerticalOptions="Center"
                     HorizontalOptions="FillAndExpand"

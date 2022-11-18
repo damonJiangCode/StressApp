@@ -19,13 +19,13 @@
             <Entry x:Name="userName"
                    Placeholder="user name"
                    PlaceholderColor="Silver"
-                   TextColor="Black"/>
+                   TextColor="Silver"/>
 
             <Entry x:Name="password"
                    IsPassword="True"
                    Placeholder="password"
                    PlaceholderColor="Silver"
-                   TextColor="Black"/>
+                   TextColor="Silver"/>
 
             <Button VerticalOptions="Center"
                     HorizontalOptions="FillAndExpand"

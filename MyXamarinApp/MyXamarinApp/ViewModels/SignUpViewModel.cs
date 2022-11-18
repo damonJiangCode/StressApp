@@ -12,13 +12,7 @@ namespace MyXamarinApp.ViewModels
     {
         public SignUpViewModel()
         {
-            // SignUpCommand = new Command(OnSignUp);
         }
-
-        // public ICommand SignUpCommand { protected set; get; }
-        //public void OnSignUp()
-        //{
-        //}
     }
 }
 

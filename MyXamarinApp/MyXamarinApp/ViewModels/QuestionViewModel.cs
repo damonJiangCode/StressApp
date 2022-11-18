@@ -1,51 +1,50 @@
 ﻿using MLToolkit.Forms.SwipeCardView.Core;
-using MyXamarinApp.Views;
-using System;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using MyXamarinApp.Views;
 
 namespace MyXamarinApp.ViewModels
 {
     public class QuestionViewModel : BaseViewModel
     {
-        ObservableCollection<string> _questions;
-        int count = 0;
+        private ObservableCollection<string> _cardItems;
+        public int count;
         private readonly INavigation Navigation;
 
         public QuestionViewModel(INavigation navigation)
         {
-            _questions = new ObservableCollection<string>();
-            _questions.Add("QUESTION_1");
-            _questions.Add("QUESTION_2");
-            _questions.Add("QUESTION_3");
-            _questions.Add("QUESTION_4");
-            _questions.Add("QUESTION_5");
-            _questions.Add("QUESTION_6");
-            _questions.Add("QUESTION_7");
-            _questions.Add("Have a good one!");
+            _cardItems = new ObservableCollection<string>();
 
+            _cardItems.Add("Have you often felt emotionally drained?");
+            _cardItems.Add("Have you felt less and less engaged by work?");
+            _cardItems.Add("Have you felt little interest or pleasure in doing things?");
+            _cardItems.Add("Have you found yourself falling asleep while not stimulated or active?");
+            _cardItems.Add("Have you found that you could not cope with all the things that you need to do?");
+            _cardItems.Add("Did poor mental health keep you from doing your usual activities, such as self care, work, or recreation?");
+            _cardItems.Add("Did poor physical health keep you from doing your usual activities, such as self care, work, or recreation?");
+            _cardItems.Add("Ready to manage your stress!!!");
 
             this.Navigation = navigation;
+            count = 0;
             SwipedCommand = new Command<SwipedCardEventArgs>(OnSwipedCommand);
+
         }
 
-        public ObservableCollection<string> Questions
+        public ObservableCollection<string> CardItems
         {
-            get => _questions;
+            get => _cardItems;
             set
             {
-                _questions = value;
+                _cardItems = value;
                 RaisePropertyChanged();
             }
         }
 
+
         public ICommand SwipedCommand { get; }
 
-        // jump to another page when questions are answered
-        async void OnSwipedCommand(SwipedCardEventArgs eventArgs)
+        private async void OnSwipedCommand(SwipedCardEventArgs eventArgs)
         {
             count++;
             if (count == 7)

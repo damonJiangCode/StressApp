@@ -82,7 +82,7 @@ namespace MyXamarinApp.Views
                     // add to DB
                     firebaseClient.Child("Users").PostAsync(newUser);
                     await DisplayAlert("Success", "Registered successfully", "OK");
-                    await Navigation.PushAsync(new QuestionPage());
+                    await Navigation.PushModalAsync(new NavigationPage(new QuestionPage()));
                 }
             }
         }
