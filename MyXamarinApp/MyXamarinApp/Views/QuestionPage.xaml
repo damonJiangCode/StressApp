@@ -7,7 +7,7 @@
 
     <ContentPage.Content>
 
-        <StackLayout Padding="40"
+        <StackLayout Padding="50"
                      BackgroundColor="DarkGray">
 
             <Label Text="SWIPE LEFT TO SAY NO!"
@@ -31,7 +31,8 @@
                                FontSize="Large"
                                HorizontalTextAlignment="Center"
                                VerticalTextAlignment="Center"
-                               BackgroundColor="SlateGray" />
+                               BackgroundColor="SlateGray"
+                               TextColor="White"/>
                     </DataTemplate>
                 </swipeCardView:SwipeCardView.ItemTemplate>
 

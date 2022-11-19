@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>  
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyXamarinApp.Views.LogInPage"
+             xmlns:viewmodels="clr-namespace:MyXamarinApp.ViewModels"
+             x:DataType="viewmodels:LogInViewModel"
              BackgroundColor="DarkGray">
     
     <ContentPage.Content>
         
-        <StackLayout VerticalOptions="Center"
-                     HorizontalOptions="FillAndExpand"
-                     Padding="30"
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     Padding="60"
                      Spacing="20">
-            <!--<Button Text="check"
-                    Clicked="Button_Clicked_1"/>-->
+
             <Image HorizontalOptions="Center"
-                   WidthRequest="300"
+                   WidthRequest="150"
                    Source="stress_release_icon.png"/>
 
-            <Entry x:Name="userName"
+            <Entry Text="{Binding UserText}"
                    Placeholder="user name"
                    PlaceholderColor="Silver"
                    TextColor="Silver"/>
 
-            <Entry x:Name="password"
+            <Entry Text="{Binding PasswordText}"
                    IsPassword="True"
                    Placeholder="password"
                    PlaceholderColor="Silver"
@@ -35,19 +35,23 @@
                     TextColor="White"  
                     FontAttributes="Bold"
                     FontSize="Large"
-                    Clicked="Button_Clicked"/>
+                    Command="{Binding LoginCommand}"/>
 
             <Label HorizontalOptions="Center">
 
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Don't have an account? " TextColor="Black"/>
-                        <Span Text="Register" TextColor="Black" FontAttributes="Italic"/>
+                        <Span Text="Don't have an account? "
+                              TextColor="Black"/>
+
+                        <Span Text="Register"
+                              TextColor="Black"
+                              FontAttributes="Italic"/>
                     </FormattedString>
                 </Label.FormattedText>
 
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    <TapGestureRecognizer Command="{Binding TapCommand}"/>
                 </Label.GestureRecognizers>
             </Label>
 

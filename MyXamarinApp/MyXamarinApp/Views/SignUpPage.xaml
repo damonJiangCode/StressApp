@@ -2,40 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyXamarinApp.Views.SignUpPage"
+             xmlns:viewmodels="clr-namespace:MyXamarinApp.ViewModels"
+             x:DataType="viewmodels:SignUpViewModel"
              BackgroundColor="DarkGray">
 
     <ContentPage.Content>
 
-        <StackLayout VerticalOptions="Center"
-                     HorizontalOptions="FillAndExpand"
-                     Padding="30"
-                     Spacing="10">
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     Padding="60"
+                     Spacing="20">
 
             <Image HorizontalOptions="Center"
-                   WidthRequest="300"
+                   WidthRequest="150"
                    Source="stress_release_icon.png"/>
                     
-            <Entry x:Name="userName"
-                    Placeholder="Please create a user name"
-                    PlaceholderColor="Silver"
-                    TextColor="Silver"/>
+            <Entry Text="{Binding UserText}"
+                   Placeholder="Please create a user name"
+                   PlaceholderColor="Silver"
+                   TextColor="Silver"/>
 
-            <Entry x:Name="email"
-                    Placeholder="Please type your email"
-                    PlaceholderColor="Silver"
-                    TextColor="Silver"/>
+            <Entry Text="{Binding EmailText}"
+                   Placeholder="Please type your email"
+                   PlaceholderColor="Silver"
+                   TextColor="Silver"/>
 
-            <Entry x:Name="password"
-                    IsPassword="True"
-                    Placeholder="Please create your password"
-                    PlaceholderColor="Silver"
-                    TextColor="Silver"/>
+            <Entry Text="{Binding PasswordText}"
+                   IsPassword="True"
+                   Placeholder="Please create your password"
+                   PlaceholderColor="Silver"
+                   TextColor="Silver"/>
 
-            <Entry x:Name="checkPassword"
-                    IsPassword="True"  
-                    Placeholder="Please type password one more time"   
-                    PlaceholderColor="Silver"  
-                    TextColor="Silver"/>
+            <Entry Text="{Binding ConfirmPasswordText}"
+                   IsPassword="True"  
+                   Placeholder="Please type password one more time"   
+                   PlaceholderColor="Silver"  
+                   TextColor="Silver"/>
 
             <Button VerticalOptions="Center"
                     HorizontalOptions="FillAndExpand"
@@ -45,7 +46,7 @@
                     TextColor="White"  
                     FontAttributes="Bold"
                     FontSize="Large"
-                    Clicked="Button_Clicked"/>
+                    Command="{Binding SignupCommand}"/>
 
         </StackLayout>
 

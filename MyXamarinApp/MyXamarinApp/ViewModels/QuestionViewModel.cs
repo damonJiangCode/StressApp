@@ -3,6 +3,10 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 using MyXamarinApp.Views;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using System;
+using System.Collections;
 
 namespace MyXamarinApp.ViewModels
 {
@@ -11,6 +15,7 @@ namespace MyXamarinApp.ViewModels
         private ObservableCollection<string> _cardItems;
         public int count;
         private readonly INavigation Navigation;
+        public readonly List<string> answers;
 
         public QuestionViewModel(INavigation navigation)
         {
@@ -25,8 +30,9 @@ namespace MyXamarinApp.ViewModels
             _cardItems.Add("Did poor physical health keep you from doing your usual activities, such as self care, work, or recreation?");
             _cardItems.Add("Ready to manage your stress!!!");
 
-            this.Navigation = navigation;
             count = 0;
+            this.Navigation = navigation;
+            answers = new List<string>(7);
             SwipedCommand = new Command<SwipedCardEventArgs>(OnSwipedCommand);
 
         }
@@ -47,8 +53,41 @@ namespace MyXamarinApp.ViewModels
         private async void OnSwipedCommand(SwipedCardEventArgs eventArgs)
         {
             count++;
+            
+            if (eventArgs.Direction.ToString().Equals("Left"))
+            {
+                answers.Add("no");
+            }
+            else if (eventArgs.Direction.ToString().Equals("Right"))
+            {
+                answers.Add("yes");
+            }
+
             if (count == 7)
             {
+                if (Application.Current.Properties.ContainsKey("account"))
+                {
+                    // get string value
+                    String userString = Application.Current.Properties["account"].ToString();
+                    // Console.WriteLine(userString);
+
+                    // cast to user object
+                    Models.User userObject = JsonConvert.DeserializeObject<Models.User>(userString);
+
+                    // save the answers
+                    userObject.Answers = answers;
+
+                    // cast to Json 
+                    String castUser = JsonConvert.SerializeObject(userObject);
+
+                    // save in local device
+                    Application.Current.Properties["account"] = castUser;
+
+                    Application.Current.SavePropertiesAsync();
+
+                    //String userString2 = Application.Current.Properties["account"] as string;
+                    //Console.WriteLine(userString2);
+                }
                 await Navigation.PushAsync(new MainPage());
             }
         }
