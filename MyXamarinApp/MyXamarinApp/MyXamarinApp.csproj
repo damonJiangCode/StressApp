@@ -7,9 +7,10 @@
 
   <ItemGroup>
     <PackageReference Include="FirebaseDatabase.net" Version="4.1.0" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.4" />
     <PackageReference Include="MLToolkit.Forms.SwipeCardView" Version="2.2.0" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.5" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Models\" />
@@ -18,9 +19,17 @@
     <None Remove="Firebase.Xamarin" />
     <None Remove="myxamarinapp.json" />
     <None Remove="Google.Cloud.Firestore" />
+    <None Remove="Mono.Android" />
+    <None Remove="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Services\" />
+    <Folder Include="Converters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\13.1.0.1\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v12.0\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

@@ -1,24 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MyXamarinApp.Views.MainPage"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MyXamarinApp.Views.MainPage"
             xmlns:local="clr-namespace:MyXamarinApp.Views"
+            xmlns:vm="clr-namespace:MyXamarinApp.ViewModels"
+            x:DataType="vm:MainViewModel"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            BarBackgroundColor="Gray"
+            BarBackgroundColor="{StaticResource Primary}"
             SelectedTabColor="Black"
-            UnselectedTabColor="Silver">
+            UnselectedTabColor="Silver"
+            NavigationPage.HasBackButton="False">
 
-    <!--Pages can be added as references or inline-->
-    <ContentPage Title="Tab 1"
-                 BackgroundColor="DarkGray"/>
+    <!--<TabbedPage.BindingContext>
+        <vm:MainViewModel/>
+    </TabbedPage.BindingContext>-->
 
-    <ContentPage Title="Tab 2"
-                 BackgroundColor="DarkGray"/>
+    <TabbedPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </TabbedPage.Resources>
 
-    <local:SettingsPage Title="Settings"/>
+    <local:QuestionReviewPage
+        Title="Questions"
+        IconImageSource="icon_feed.png"/>
 
+    <local:ResourcePage
+        Title="Resources"
+        IconImageSource="icon_feed.png"/>
 
-
+    <local:ProfilePage
+        Title = "Account"
+        IconImageSource="icon_feed.png"/>
 
 </TabbedPage>

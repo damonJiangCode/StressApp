@@ -4,7 +4,7 @@
              x:Class="MyXamarinApp.Views.SignUpPage"
              xmlns:viewmodels="clr-namespace:MyXamarinApp.ViewModels"
              x:DataType="viewmodels:SignUpViewModel"
-             BackgroundColor="DarkGray">
+             BackgroundColor="White">
 
     <ContentPage.Content>
 
@@ -16,31 +16,31 @@
                    WidthRequest="150"
                    Source="stress_release_icon.png"/>
                     
-            <Entry Text="{Binding UserText}"
-                   Placeholder="Please create a user name"
+            <Entry Text="{Binding UserNameText}"
+                   Placeholder="create a user name"
                    PlaceholderColor="Silver"
                    TextColor="Silver"/>
 
             <Entry Text="{Binding EmailText}"
-                   Placeholder="Please type your email"
+                   Placeholder="type your email"
                    PlaceholderColor="Silver"
                    TextColor="Silver"/>
 
             <Entry Text="{Binding PasswordText}"
                    IsPassword="True"
-                   Placeholder="Please create your password"
+                   Placeholder="create your password"
                    PlaceholderColor="Silver"
                    TextColor="Silver"/>
 
             <Entry Text="{Binding ConfirmPasswordText}"
                    IsPassword="True"  
-                   Placeholder="Please type password one more time"   
+                   Placeholder="type your password again"   
                    PlaceholderColor="Silver"  
                    TextColor="Silver"/>
 
             <Button VerticalOptions="Center"
                     HorizontalOptions="FillAndExpand"
-                    BackgroundColor="DodgerBlue"
+                    BackgroundColor="{StaticResource Primary}"
                     CornerRadius="20"
                     Text="Sign Up"
                     TextColor="White"  

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyXamarinApp.Views.QuestionReviewPage"
+             xmlns:vm="clr-namespace:MyXamarinApp.ViewModels"
+             Title="Question Review">
+
+    <ContentPage.BindingContext>
+        <vm:QuestionReviewViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout BackgroundColor="White">
+
+        <Button Text="Branch 1, 2 (Sample Questions)"
+                Margin="10"
+                Clicked="Branch12_Clicked"/>
+        <Button Text="Branch 3 (Depression)"
+                Margin="10"
+                Clicked="Branch3_Clicked"/>
+        <Button Text="Branch 4 (Fatigue)"
+                Margin="10"
+                Clicked="Branch4_Clicked"/>
+        <Button Text="Branch 5 (Stress)"
+                Margin="10"
+                Clicked="Branch5_Clicked"/>
+        <Button Text="Branch 6 (Mental and Physical Wellness)"
+                Margin="10"
+                Clicked="Branch6_Clicked"/>
+
+    </StackLayout>
+
+    
+     
+</ContentPage>
+

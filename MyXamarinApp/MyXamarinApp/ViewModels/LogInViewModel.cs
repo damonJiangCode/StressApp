@@ -12,7 +12,7 @@ namespace MyXamarinApp.ViewModels
     {
         private readonly INavigation Navigation;
         readonly FirebaseClient firebaseClient;
-        String _UserText;
+        String _EmailText;
         String _PasswordText;
 
         public LogInViewModel(INavigation navigation)
@@ -21,7 +21,7 @@ namespace MyXamarinApp.ViewModels
 
             firebaseClient = new FirebaseClient("https://myxamarinapp-331dd-default-rtdb.firebaseio.com/");
 
-            _UserText = String.Empty;
+            _EmailText = String.Empty;
             _PasswordText = String.Empty;
 
             LoginCommand = new Command(OnLoginCommand);
@@ -29,12 +29,12 @@ namespace MyXamarinApp.ViewModels
 
         }
 
-        public String UserText
+        public String EmailText
         {
-            get => _UserText;
+            get => _EmailText;
             set
             {
-                _UserText = value;
+                _EmailText = value;
                 RaisePropertyChanged();
             }
         }
@@ -64,18 +64,18 @@ namespace MyXamarinApp.ViewModels
             // check credentials
             foreach (var user in userList)
             {
-                if (user.Object.UserName.Equals(_UserText) && user.Object.Password.Equals(_PasswordText))
+                if (user.Object.Email.Equals(EmailText) && user.Object.Password.Equals(PasswordText))
                 {
                     // store the credentials to local device
                     var userInfo = JsonConvert.SerializeObject(user);
                     Application.Current.Properties.Add("account", userInfo);
                     Application.Current.SavePropertiesAsync();
                     found = true;
-                    await Navigation.PushAsync(new MainPage());
+                    await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
                 }
             }
             if (!found)
-                Application.Current.MainPage.DisplayAlert("Alert", "User name or password is incorrect!", "ok");
+                Application.Current.MainPage.DisplayAlert("Error", "User name and password does not match!", "Dismiss");
         }
 
         public Command TapCommand { get; }

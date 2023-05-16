@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyXamarinApp.Views.Branch4Page"
+             xmlns:vm="clr-namespace:MyXamarinApp.ViewModels"
+             Title="Branch 4 Questions">
+
+    <ContentPage.BindingContext>
+        <vm:Branch4ViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <RefreshView x:Name="refreshView"
+                 RefreshColor="#96d1ff">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <ScrollView>
+                <StackLayout BindableLayout.ItemsSource="{Binding Branch4QAs}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="10"
+                                    Margin="5, 5, 5, 5"
+                                    HasShadow="True"
+                                    BackgroundColor="#5ac8fa">
+                                <StackLayout Orientation="Vertical"
+                                            HorizontalOptions="FillAndExpand">
+                                    <Label x:Name="questionText"
+                                            Text="{Binding Question}"/>
+                                    <StackLayout Orientation="Vertical"
+                                                    HorizontalOptions="CenterAndExpand"
+                                                    RadioButtonGroup.GroupName="{Binding QuestionNumber}"
+                                                    RadioButtonGroup.SelectedValue="{Binding Selection, Mode=TwoWay}">
+                                        <RadioButton Content="Never"
+                                                        Value="Never" />
+                                        <RadioButton Content="Sometimes (about monthly or less)"
+                                                        Value="Sometimes (about monthly or less)" />
+                                        <RadioButton Content="Regularly (about a few times a month)"
+                                                        Value="Regularly (about a few times a month)" />
+                                        <RadioButton Content="Often (about weekly)"
+                                                        Value="Often (about weekly)"/>
+                                        <RadioButton Content="Always (about everyday)"
+                                                        Value="Always (about everyday)"/>
+                                        <Label x:Name="optionLabel">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="You have chosen: " />
+                                                    <Span Text="{Binding Selection}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+
+            <Button Grid.Row="1"
+                    Text="Submit"
+                    Command="{Binding SubmitCommand}"
+                    BackgroundColor="{StaticResource Primary}"
+                    CornerRadius="25"
+                    TextColor="White"
+                    FontSize="Large"
+                    Margin="10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+        </Grid>
+    </RefreshView>
+</ContentPage>
+

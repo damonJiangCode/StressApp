@@ -2,31 +2,53 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:vm="clr-namespace:MyXamarinApp.ViewModels"
     x:Class="MyXamarinApp.Views.ProfilePage"
-    BackgroundColor="DarkGray">
+    BackgroundColor="White"
+    Title="Profile">
+
+    <ContentPage.BindingContext>
+        <vm:ProfileViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.Content>
 
         <StackLayout Margin="10, 10, 10, 10">
 
+            <xct:AvatarView
+                Text="D"
+                HorizontalOptions="Center"
+                Size="100"
+                Color="{StaticResource Primary}"/>
+
             <Label Text="Gender:"/>
             <Picker x:Name="genderPicker"
-                    Margin="200,5,5,5"
+                    Margin="5,5,5,5"
                     Title="gender"
+                    HorizontalTextAlignment="Start"
                     TitleColor="Black"
-                    BackgroundColor="Gainsboro">
+                    BackgroundColor="{StaticResource Primary}">
                 <Picker.Items>
                     <x:String>Male</x:String>
                     <x:String>Female</x:String>
+                    <x:String>Unsex</x:String>
                 </Picker.Items>
             </Picker>
 
             <Label Text="Job Field:"/>
             <Picker x:Name="jobFieldPicker"
-                    Margin="200,5,5,5"
+                    Margin="5,5,5,5"
                     Title="job field"
+                    HorizontalTextAlignment="Start"
                     TitleColor="Black"
-                    BackgroundColor="Gainsboro">
+                    BackgroundColor="{StaticResource Primary}">
                 <Picker.Items>
                     <x:String>Student</x:String>
                     <x:String>Engineering and architecture</x:String>
@@ -47,8 +69,9 @@
 
             <Label Text="Birth Date:"/>
             <DatePicker x:Name="birthDatePicker"
-                        Margin="200,5,5,5"
-                        BackgroundColor="Gainsboro"
+                        Margin="5,5,5,5"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="{StaticResource Primary}"
                         Format="MMM, dd, yyyy"/>
 
         </StackLayout>

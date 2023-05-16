@@ -8,89 +8,98 @@
     <ContentPage.Content>
 
         <StackLayout Padding="50"
-                     BackgroundColor="DarkGray">
-
-            <Label Text="SWIPE LEFT TO SAY NO!"
-                   TextColor="SlateGray"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
-
-            <Label Text="SWIPE RIGHT TO SAY YES!"
-                   TextColor="SlateGray"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
+                     BackgroundColor="{StaticResource Primary}">
 
             <swipeCardView:SwipeCardView
+                x:Name="SwipeCardView"
                 ItemsSource="{Binding CardItems}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
                 SwipedCommand="{Binding SwipedCommand}"
-                VerticalOptions="FillAndExpand">
+                DraggingCommand="{Binding DraggingCommand}"
+                Threshold="{Binding Threshold}"
+                SupportedSwipeDirections="Left, Right"
+                SupportedDraggingDirections="Left, Right">
 
                 <swipeCardView:SwipeCardView.ItemTemplate>
+
                     <DataTemplate>
-                        <Label Text="{Binding .}"
-                               FontSize="Large"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Center"
-                               BackgroundColor="SlateGray"
-                               TextColor="White"/>
+
+                        <StackLayout
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand">
+
+                            <Frame  CornerRadius="50"
+                                    Padding="0"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    BackgroundColor="White">
+
+                                <AbsoluteLayout>
+
+                                    <Frame AbsoluteLayout.LayoutBounds=".5,5,1,1"
+                                           AbsoluteLayout.LayoutFlags="All"
+                                           CornerRadius="35">
+
+                                        <Label Text="{Binding .}"
+                                               FontSize="Large"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               TextColor="Gray"/>
+                                    </Frame>
+
+                                    <Frame  x:Name="YesFrame"
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent"
+                                            Padding="0"
+                                            CornerRadius="15"
+                                            Rotation="-20"
+                                            AbsoluteLayout.LayoutBounds=".1,.07, 150, 50"
+                                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                                            Opacity="0">
+
+                                        <Label  x:Name="YesLabel"
+                                                Text="YES"
+                                                TextColor="{StaticResource Primary}"
+                                                HorizontalTextAlignment="Center"
+                                                VerticalTextAlignment="Center"
+                                                VerticalOptions="CenterAndExpand"
+                                                FontSize="32"/>
+                                    </Frame>
+
+                                    <Frame  x:Name="NoFrame"
+                                            BackgroundColor="Transparent"
+                                            BorderColor="Transparent"
+                                            Padding="0"
+                                            CornerRadius="15"
+                                            Rotation="20"
+                                            AbsoluteLayout.LayoutBounds=".9,.07, 150, 50"
+                                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                                            Opacity="0">
+
+                                        <Label  x:Name="NoLabel"
+                                                Text="NO"
+                                                TextColor="{StaticResource Primary}"
+                                                HorizontalTextAlignment="Center"
+                                                VerticalTextAlignment="Center"
+                                                VerticalOptions="CenterAndExpand"
+                                                FontSize="32"/>
+                                    </Frame>
+
+                                </AbsoluteLayout>
+
+                            </Frame>
+
+                        </StackLayout>
+
                     </DataTemplate>
+
                 </swipeCardView:SwipeCardView.ItemTemplate>
 
             </swipeCardView:SwipeCardView>
-
+                
         </StackLayout>
 
     </ContentPage.Content>
 
 </ContentPage>
-
-<!--<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:swipeCardView="clr-namespace:MLToolkit.Forms.SwipeCardView;assembly=MLToolkit.Forms.SwipeCardView"
-             xmlns:viewmodels="clr-namespace:MyXamarinApp.ViewModels"
-             x:DataType="viewmodels:QuestionViewModel" 
-             x:Class="MyXamarinApp.Views.QuestionPage">
-
-    <ContentPage.Content>
-
-        <StackLayout Padding="30"
-                     BackgroundColor="DarkGray">
-
-            <Label Text="SWIPE LEFT TO SAY NO!"
-                   TextColor="SlateGray"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
-
-            <Label Text="SWIPE RIGHT TO SAY YES!"
-                   TextColor="SlateGray"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
-
-            <swipeCardView:SwipeCardView
-                ItemsSource="{Binding Questions}"
-                SwipedCommand="{Binding SwipedCommand}"
-                VerticalOptions="Center"
-                HorizontalOptions="Center">
-
-                <swipeCardView:SwipeCardView.ItemTemplate>
-
-                    <DataTemplate>
-
-                        <Label Text="{Binding Questions}"
-                               FontSize="Medium"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Center"
-                               BackgroundColor="White" />
-
-                    </DataTemplate>
-
-                </swipeCardView:SwipeCardView.ItemTemplate>
-
-            </swipeCardView:SwipeCardView>
-
-        </StackLayout>
-
-    </ContentPage.Content>
-
-</ContentPage>-->
